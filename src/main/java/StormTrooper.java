@@ -1,4 +1,3 @@
-
 public class StormTrooper extends Trooper {
     private String name = "";
     private static int soldierCount = 0;
@@ -10,22 +9,17 @@ public class StormTrooper extends Trooper {
         setMarchModifier(1.10);
     }
 
+    @Override
     public double march(double duration) {
         return getMarchSpeed() * duration * getMarchModifier();
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public static int getSoldierCount() { return soldierCount; }
 
-    public static int getSoldierCount() {
-        return soldierCount;
-    }
-
+    @Override
     public String toString() {
         String label = (name == null) ? "" : name;
         if (label.isEmpty()) {
